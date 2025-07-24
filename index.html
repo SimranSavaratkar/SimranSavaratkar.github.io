@@ -1,19 +1,363 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simran Savaratkar - Resume</title>
-  <style>
-    body { font-family: Arial, sans-serif; max-width: 800px; margin: 20px auto; padding: 20px; line-height: 1.6; }
-    h1, h2 { color: #333; }
-    .section { margin-bottom: 20px; }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Simran Savaratkar | Associate Solutions Engineer</title>
+<style>
+  /* Reset & base */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: #f4f7f8;
+    color: #333;
+  }
+  a {
+    color: #3498db;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  /* Navbar */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: #2c3e50;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0 1rem;
+  }
+  nav ul li {
+    margin: 0 1rem;
+  }
+  nav ul li a {
+    display: block;
+    padding: 1rem 0;
+    color: #ecf0f1;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s;
+  }
+  nav ul li a:hover,
+  nav ul li a.active {
+    color: #e67e22;
+    border-bottom: 2px solid #e67e22;
+  }
+
+  /* Container */
+  .container {
+    max-width: 900px;
+    margin: 80px auto 40px;
+    padding: 0 20px;
+  }
+
+  /* Section Titles */
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 3px solid #e67e22;
+    padding-bottom: 5px;
+    color: #2c3e50;
+  }
+  h3 {
+    margin-top: 1rem;
+    color: #34495e;
+  }
+
+  /* About */
+  #about p {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    color: #555;
+  }
+
+  /* Experience, Projects, Education */
+  ul {
+    margin-top: 0.6rem;
+    margin-left: 20px;
+    color: #444;
+  }
+  ul li {
+    margin-bottom: 0.5rem;
+  }
+  /* Sub-headings in Experience */
+  .job-title {
+    font-weight: 700;
+    color: #e67e22;
+  }
+  .job-duration {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #888;
+  }
+
+  /* Skills */
+  .skills {
+    margin-top: 0.5rem;
+  }
+  .skills span {
+    display: inline-block;
+    background: #e67e22;
+    color: white;
+    padding: 6px 12px;
+    margin: 5px 6px 5px 0;
+    font-weight: 600;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    cursor: default;
+    transition: background-color 0.3s ease;
+  }
+  .skills span:hover {
+    background: #d35400;
+  }
+
+  /* Languages */
+  #languages p {
+    display: inline-block;
+    background: #2291e6;
+    color: white;
+    padding: 6px 12px;
+    margin: 5px 6px 5px 0;
+    font-weight: 600;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    cursor: default;
+    transition: background-color 0.3s ease;
+  }
+
+  /* Contact */
+  #contact {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  #contact a {
+    color: #e67e22;
+    font-weight: 700;
+  }
+  #contact a:hover {
+    text-decoration: underline;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 15px 0;
+    background: #34495e;
+    color: white;
+    font-size: 0.9rem;
+    margin-top: 40px;
+  }
+
+  /* Back to top button */
+  #backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #e67e22;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    display: none;
+    z-index: 1001;
+    transition: background-color 0.3s;
+  }
+  #backToTop:hover {
+    background: #d35400;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    nav ul {
+      flex-direction: column;
+      background: #2c3e50;
+    }
+    nav ul li {
+      margin: 0;
+      border-bottom: 1px solid #34495e;
+      width: 100%;
+      text-align: center;
+    }
+    nav ul li a {
+      padding: 0.75rem 0;
+    }
+    .container {
+      margin: 100px 15px 40px;
+    }
+  }
+</style>
 </head>
 <body>
 
-  <h1>Simran Savaratkar-software developer</h1>
+<nav>
+  <ul>
+    <li><a href="#about" class="active">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#languages">Languages</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
+<div class="container">
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      A highly motivated Associate Solutions Engineer with experience in software development, system optimization, and security upgrades.
+      Skilled in Java, Spring, Apache Camel, and AngularJS, with hands-on expertise in framework migrations, troubleshooting, and automation.
+      Passionate about creating efficient, scalable, and secure solutions while continuously learning and improving.
+    </p>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <h3>Associate Solutions Engineer <span class="job-duration">(July 2023 – Present)</span></h3>
+    <p><strong>Omniscient Software Pvt. Ltd.</strong></p>
+    <ul>
+      <li>Developed and improved Firestart modules adding new features and ensuring smooth functionality.</li>
+      <li>Led framework migration and VAPT upgrades to improve security, compliance, and system stability.</li>
+      <li>Found and fixed framework issues to enhance performance and reliability.</li>
+      <li>Worked with stakeholders to gather requirements and improve the product.</li>
+      <li>Created documentation for each release to help with future development and issue resolution.</li>
+      <li>Hands-on experience with Jenkins, Nexus, Jira; technologies used: Java, Spring, Apache Camel, Liquibase, AngularJS, MyBatis.</li>
+    </ul>
+
+    <h3>Project Trainee <span class="job-duration">(Sep 2022 – June 2023)</span></h3>
+    <p><strong>Omniscient Software Pvt. Ltd.</strong></p>
+    <ul>
+      <li>Attended functional and technical training sessions to build expertise in project requirements and technologies.</li>
+      <li>Assisted senior team members at various stages of the project, contributing to planning, execution, and troubleshooting.</li>
+      <li>Worked on bug fixes, ensuring smooth functionality and minimizing system errors.</li>
+      <li>Analyzed and resolved User Acceptance Testing (UAT) issues, improving system reliability before deployment.</li>
+      <li>Followed clean code principles to maintain optimized and maintainable codebase.</li>
+      <li>Gained hands-on experience in debugging, troubleshooting, and project execution.</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <h3>Automated Testing Utility</h3>
+    <ul>
+      <li>Developed a utility to automate test file generation by generating unique fields for the project.</li>
+      <li>Automated the process by pasting generated files into the pickup channel and generating expected acknowledgment files.</li>
+      <li>Created a release documentation generator to streamline release and support document creation.</li>
+      <li>Implemented email notifications to track license expiry and prevent disruptions.</li>
+      <li>Improved testing efficiency by reducing manual effort and ensuring accuracy.</li>
+    </ul>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <ul>
+      <li><strong>MSc (CS)</strong>, Modern College, Pune — 2023 (77.35%)</li>
+      <li><strong>BSc (CS)</strong>, Modern College, Pune — 2021 (81.63%)</li>
+      <li><strong>HSC</strong>, Modern College, Pune — 2018 (70.77%)</li>
+      <li><strong>SSC</strong>, GSM, Pune — 2016</li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <span>Java</span>
+      <span>Spring</span>
+      <span>Spring MVC</span>
+      <span>Liquibase</span>
+      <span>MyBatis</span>
+      <span>Apache Camel</span>
+      <span>AngularJS</span>
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>MySQL</span>
+    </div>
+  </section>
+
+  <section id="languages">
+    <h2>Languages</h2>
+    <p>Marathi</p>
+    <p>English</p>
+    <p>Hindi</p>
+  </section>
+<br>
+  <section id="contact">
+    <h2 style="color: white;">Contact</h2>
+    <p>📍 Pune, Maharashtra</p>
+    <p>📞 <a href="tel:+918208779171">8208779171</a></p>
+    <p>✉️ <a href="mailto:simransavaratkarm@gmail.com">simransavaratkarm@gmail.com</a></p>
+  </section>
+</div>
+
+<footer>
+  &copy; 2025 Simran Savaratkar
+</footer>
+
+<button id="backToTop" title="Back to top">&#8679;</button>
+
+<script>
+  // Smooth scrolling for nav links
+  document.querySelectorAll('nav ul li a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelectorAll('nav ul li a').forEach(a => a.classList.remove('active'));
+      this.classList.add('active');
+
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop - 70,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // Back to top button
+  const backToTopBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if(window.scrollY > 300) {
+      backToTopBtn.style.display = 'block';
+    } else {
+      backToTopBtn.style.display = 'none';
+    }
+  });
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+
+  // Highlight nav on scroll
+  window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section');
+    const scrollPos = window.scrollY + 80; // offset for navbar
+    sections.forEach(section => {
+      if(scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+        const id = section.getAttribute('id');
+        document.querySelectorAll('nav ul li a').forEach(a => a.classList.remove('active'));
+        const currentLink = document.querySelector(`nav ul li a[href="#${id}"]`);
+        if(currentLink) currentLink.classList.add('active');
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
