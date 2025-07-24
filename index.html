@@ -1,380 +1,411 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Simran Savaratkar | Associate Solutions Engineer</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simran Savaratkar | Associate Solutions Engineer</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- AOS Animation Library -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 
-<style>
-  /* Reset & base */
-  * {
-    margin: 0; padding: 0; box-sizing: border-box;
-  }
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    background: #f4f7f8;
-    color: #333;
-  }
-  a {
-    color: #3498db;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-  /* Navbar */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    background: #2c3e50;
-    display: flex;
-    justify-content: center;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-  nav ul {
-    list-style: none;
-    display: flex;
-    padding: 0 1rem;
-  }
-  nav ul li {
-    margin: 0 1rem;
-  }
-  nav ul li a {
-    display: block;
-    padding: 1rem 0;
-    color: #ecf0f1;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: color 0.3s;
-  }
-  nav ul li a:hover,
-  nav ul li a.active {
-    color: #e67e22;
-    border-bottom: 2px solid #e67e22;
-  }
-
-  /* Container */
-  .container {
-    max-width: 900px;
-    margin: 80px auto 40px;
-    padding: 0 20px;
-  }
-
-  /* Section Titles */
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 0.8rem;
-    border-bottom: 3px solid #e67e22;
-    padding-bottom: 5px;
-    color: #2c3e50;
-  }
-  h3 {
-    margin-top: 1rem;
-    color: #34495e;
-  }
-
-  /* About */
-  #about p {
-    font-size: 1.1rem;
-    margin-top: 0.5rem;
-    color: #555;
-  }
-
-  /* Experience, Projects, Education */
-  ul {
-    margin-top: 0.6rem;
-    margin-left: 20px;
-    color: #444;
-  }
-  ul li {
-    margin-bottom: 0.5rem;
-  }
-  /* Sub-headings in Experience */
-  .job-title {
-    font-weight: 700;
-    color: #e67e22;
-  }
-  .job-duration {
-    font-style: italic;
-    font-size: 0.9rem;
-    color: #888;
-  }
-
-  /* Skills */
-  .skills {
-    margin-top: 0.5rem;
-  }
-  .skills span {
-    display: inline-block;
-    background: #e67e22;
-    color: white;
-    padding: 6px 12px;
-    margin: 5px 6px 5px 0;
-    font-weight: 600;
-    border-radius: 25px;
-    font-size: 0.95rem;
-    cursor: default;
-    transition: background-color 0.3s ease;
-  }
-  .skills span:hover {
-    background: #d35400;
-  }
-
-  /* Languages */
-  #languages p {
-    display: inline-block;
-    background: #2291e6;
-    color: white;
-    padding: 6px 12px;
-    margin: 5px 6px 5px 0;
-    font-weight: 600;
-    border-radius: 25px;
-    font-size: 0.95rem;
-    cursor: default;
-    transition: background-color 0.3s ease;
-  }
-
-  /* Contact */
-  #contact {
-    background: #2c3e50;
-    color: #ecf0f1;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-  }
-  #contact a {
-    color: #e67e22;
-    font-weight: 700;
-  }
-  #contact a:hover {
-    text-decoration: underline;
-  }
-
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 15px 0;
-    background: #34495e;
-    color: white;
-    font-size: 0.9rem;
-    margin-top: 40px;
-  }
-
-  /* Back to top button */
-  #backToTop {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: #e67e22;
-    color: white;
-    border: none;
-    padding: 12px 16px;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    display: none;
-    z-index: 1001;
-    transition: background-color 0.3s;
-  }
-  #backToTop:hover {
-    background: #d35400;
-  }
-
-  /* Responsive */
-  @media (max-width: 600px) {
-    nav ul {
-      flex-direction: column;
-      background: #2c3e50;
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      line-height: 1.7;
+      scroll-behavior: smooth;
     }
-    nav ul li {
-      margin: 0;
-      border-bottom: 1px solid #34495e;
-      width: 100%;
+    a {
+      text-decoration: none;
+      color: #e67e22;
+      transition: color 0.3s;
+    }
+    a:hover { color: #d35400; }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(44, 62, 80, 0.95);
+      padding: 15px 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav ul li { margin: 0 15px; }
+    nav ul li a {
+      color: #ecf0f1;
+      font-weight: 600;
+      font-size: 1rem;
+      position: relative;
+      padding-bottom: 5px;
+    }
+    nav ul li a.active,
+    nav ul li a:hover { color: #f39c12; }
+
+    /* Header Section with Hero Image */
+   header {
+      height: 100vh;
+      background: linear-gradient(135deg, #2c3e50, #3498db);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      animation: fadeInDown 1s ease;
+    }
+    header h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #f39c12;
+      margin-top: 10px;
+      animation: fadeInUp 1s ease;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .resume-btn {
+      margin-top: 30px;
+      padding: 12px 25px;
+      background: #f39c12;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .resume-btn:hover { background: #d35400; }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Sections */
+    .container {
+      max-width: 1000px;
+      margin: 100px auto;
+      padding: 0 20px;
+    }
+    section { margin-bottom: 80px; }
+    h2.section-title {
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #2c3e50;
+      position: relative;
+    }
+    h2.section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: #f39c12;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    /* Cards */
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    .card:hover { transform: translateY(-5px); }
+    .card h3 {
+      color: #e67e22;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+    .job-duration {
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 10px;
+    }
+    .card ul { margin-left: 20px; color: #444; }
+
+    /* Skills */
+    .skills-container {
       text-align: center;
     }
-    nav ul li a {
-      padding: 0.75rem 0;
+    .skills-container span {
+      display: inline-block;
+      background: #e67e22;
+      color: #fff;
+      padding: 8px 15px;
+      margin: 6px;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: background 0.3s;
     }
-    .container {
-      margin: 100px 15px 40px;
+    .skills-container span:hover { background: #d35400; }
+
+    /* Languages */
+    .lang-container { text-align: center; }
+    .lang-container p {
+      display: inline-block;
+      background: #3498db;
+      color: #fff;
+      padding: 8px 15px;
+      margin: 6px;
+      border-radius: 25px;
+      font-weight: 600;
     }
-  }
-</style>
+
+    /* Contact */
+    #contact {
+      background: linear-gradient(135deg, #34495e, #2c3e50);
+      color: #ecf0f1;
+      padding: 50px 20px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    #contact a { color: #f39c12; font-weight: 700; }
+    .social-icons a {
+      font-size: 1.8rem;
+      color: #ecf0f1;
+      margin: 0 15px;
+      transition: color 0.3s;
+    }
+    .social-icons a:hover { color: #f39c12; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #2c3e50;
+      color: #ecf0f1;
+      font-size: 0.9rem;
+    }
+
+    /* Back to top button */
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #e67e22;
+      color: white;
+      border: none;
+      padding: 12px 16px;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      cursor: pointer;
+      display: none;
+      transition: background 0.3s;
+      z-index: 1001;
+    }
+    #backToTop:hover { background: #d35400; }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.3rem; }
+      header h2 { font-size: 1.2rem; }
+      .container { margin-top: 120px; }
+    }
+  </style>
 </head>
 <body>
 
-<nav>
-  <ul>
-    <li><a href="#about" class="active">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#languages">Languages</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<div class="container">
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      A highly motivated Associate Solutions Engineer with experience in software development, system optimization, and security upgrades.
-      Skilled in Java, Spring, Apache Camel, and AngularJS, with hands-on expertise in framework migrations, troubleshooting, and automation.
-      Passionate about creating efficient, scalable, and secure solutions while continuously learning and improving.
-    </p>
-  </section>
-
-  <section id="experience">
-    <h2>Experience</h2>
-
-    <h3>Associate Solutions Engineer <span class="job-duration">(July 2023 – Present)</span></h3>
-    <p><strong>Omniscient Software Pvt. Ltd.</strong></p>
+  <!-- Navbar -->
+  <nav>
     <ul>
-      <li>Developed and improved Firestart modules adding new features and ensuring smooth functionality.</li>
-      <li>Led framework migration and VAPT upgrades to improve security, compliance, and system stability.</li>
-      <li>Found and fixed framework issues to enhance performance and reliability.</li>
-      <li>Worked with stakeholders to gather requirements and improve the product.</li>
-      <li>Created documentation for each release to help with future development and issue resolution.</li>
-      <li>Hands-on experience with Jenkins, Nexus, Jira; technologies used: Java, Spring, Apache Camel, Liquibase, AngularJS, MyBatis.</li>
+      <li><a href="#about" class="active">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#languages">Languages</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
+  </nav>
 
-    <h3>Project Trainee <span class="job-duration">(Sep 2022 – June 2023)</span></h3>
-    <p><strong>Omniscient Software Pvt. Ltd.</strong></p>
-    <ul>
-      <li>Attended functional and technical training sessions to build expertise in project requirements and technologies.</li>
-      <li>Assisted senior team members at various stages of the project, contributing to planning, execution, and troubleshooting.</li>
-      <li>Worked on bug fixes, ensuring smooth functionality and minimizing system errors.</li>
-      <li>Analyzed and resolved User Acceptance Testing (UAT) issues, improving system reliability before deployment.</li>
-      <li>Followed clean code principles to maintain optimized and maintainable codebase.</li>
-      <li>Gained hands-on experience in debugging, troubleshooting, and project execution.</li>
-    </ul>
-  </section>
+  <!-- Hero Header -->
+  <header>
+    <h1>Simran Savaratkar</h1>
+    <h2>Associate Solutions Engineer</h2>
+    <!-- Resume Download Button -->
+    <a href="Simran Savaratkar java developer .pdf" class="resume-btn" download>
+      <i class="fas fa-download"></i> Download Resume
+    </a>
+  </header>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <h3>Automated Testing Utility</h3>
-    <ul>
-      <li>Developed a utility to automate test file generation by generating unique fields for the project.</li>
-      <li>Automated the process by pasting generated files into the pickup channel and generating expected acknowledgment files.</li>
-      <li>Created a release documentation generator to streamline release and support document creation.</li>
-      <li>Implemented email notifications to track license expiry and prevent disruptions.</li>
-      <li>Improved testing efficiency by reducing manual effort and ensuring accuracy.</li>
-    </ul>
-  </section>
+  <div class="container">
+    <!-- About -->
+    <section id="about" data-aos="fade-up">
+      <h2 class="section-title">About Me</h2>
+      <p>
+        A highly motivated Associate Solutions Engineer with experience in software development, system optimization, and security upgrades.
+        Skilled in Java, Spring, Apache Camel, and AngularJS, with hands-on expertise in framework migrations, troubleshooting, and automation.
+        Passionate about creating efficient, scalable, and secure solutions while continuously learning and improving.
+      </p>
+    </section>
 
-  <section id="education">
-    <h2>Education</h2>
-    <ul>
-      <li><strong>MSc (CS)</strong>, Modern College, Pune — 2023 (77.35%)</li>
-      <li><strong>BSc (CS)</strong>, Modern College, Pune — 2021 (81.63%)</li>
-      <li><strong>HSC</strong>, Modern College, Pune — 2018 (70.77%)</li>
-      <li><strong>SSC</strong>, GSM, Pune — 2016</li>
-    </ul>
-  </section>
+    <!-- Experience -->
+    <section id="experience" data-aos="fade-up">
+      <h2 class="section-title">Experience</h2>
+      <div class="card">
+        <h3>Associate Solutions Engineer</h3>
+        <p class="job-duration">July 2023 – Present | Omniscient Software Pvt. Ltd.</p>
+        <ul>
+          <li>Developed and improved Firestart modules with new features.</li>
+          <li>Led framework migration and VAPT upgrades for better security.</li>
+          <li>Fixed performance issues and improved system reliability.</li>
+          <li>Collaborated with stakeholders for requirement gathering.</li>
+          <li>Created documentation for each release.</li>
+          <li>Worked with Jenkins, Nexus, Jira, Java, Spring, Apache Camel, Liquibase, AngularJS, MyBatis.</li>
+        </ul>
+      </div>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills">
-      <span>Java</span>
-      <span>Spring</span>
-      <span>Spring MVC</span>
-      <span>Liquibase</span>
-      <span>MyBatis</span>
-      <span>Apache Camel</span>
-      <span>AngularJS</span>
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>MySQL</span>
-    </div>
-  </section>
+      <div class="card">
+        <h3>Project Trainee</h3>
+        <p class="job-duration">Sep 2022 – June 2023 | Omniscient Software Pvt. Ltd.</p>
+        <ul>
+          <li>Attended technical training sessions to build expertise.</li>
+          <li>Assisted in project planning and execution.</li>
+          <li>Worked on bug fixes and UAT issue resolution.</li>
+          <li>Followed clean code principles and debugging practices.</li>
+        </ul>
+      </div>
+    </section>
 
-  <section id="languages">
-    <h2>Languages</h2>
-    <p>Marathi</p>
-    <p>English</p>
-    <p>Hindi</p>
-  </section>
-<br>
-  <section id="contact">
-    <h2 style="color: white;">Contact</h2>
-    <p>📍 Pune, Maharashtra</p>
-    <p>📞 <a href="tel:+918208779171">8208779171</a></p>
-    <p>✉️ <a href="mailto:simransavaratkarm@gmail.com">simransavaratkarm@gmail.com</a></p>
-    <!-- Social Links with Icons -->
-  </section>
-</div>
+    <!-- Projects -->
+    <section id="projects" data-aos="fade-up">
+      <h2 class="section-title">Projects</h2>
+      <div class="card">
+        <h3>Automated Testing Utility</h3>
+        <ul>
+          <li>Developed a utility to automate test file generation.</li>
+          <li>Automated acknowledgment file generation for testing.</li>
+          <li>Created a release documentation generator.</li>
+          <li>Implemented email notifications for license expiry.</li>
+          <li>Improved testing efficiency by reducing manual effort.</li>
+        </ul>
+      </div>
+    </section>
 
-<footer>
-    <div style="margin-top: 20px;">
-  <a href="https://www.linkedin.com/in/simran-savaratkar-057125247/" target="_blank" style="margin: 0 15px; color: #ecf0f1; font-size: 1.8rem;">
-    <i class="fab fa-linkedin"></i>
-  </a>
-  <a href="https://github.com/SimranSavaratkar" target="_blank" style="margin: 0 15px; color: #ecf0f1; font-size: 1.8rem;">
-    <i class="fab fa-github"></i>
-  </a>
-  <a href="https://www.hackerrank.com/simransavaratka1" target="_blank" style="margin: 0 15px; color: #ecf0f1; font-size: 1.8rem;">
-    <i class="fab fa-hackerrank"></i>
-  </a>
-  <a href="https://www.hackerearth.com/@simran330/" target="_blank" style="margin: 0 15px; color: #ecf0f1; font-size: 1.8rem;">
-    <i class="fas fa-code"></i>
-  </a>
-</div>
-  &copy; 2025 Simran Savaratkar
-</footer>
+    <!-- Education -->
+    <section id="education" data-aos="fade-up">
+      <h2 class="section-title">Education</h2>
+      <div class="card">
+        <ul>
+          <li><strong>MSc (CS)</strong>, Modern College, Pune — 2023 (77.35%)</li>
+          <li><strong>BSc (CS)</strong>, Modern College, Pune — 2021 (81.63%)</li>
+          <li><strong>HSC</strong>, Modern College, Pune — 2018 (70.77%)</li>
+          <li><strong>SSC</strong>, GSM, Pune — 2016</li>
+        </ul>
+      </div>
+    </section>
 
-<button id="backToTop" title="Back to top">&#8679;</button>
+    <!-- Skills -->
+    <section id="skills" data-aos="fade-up">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-container">
+        <span>Java</span>
+        <span>Spring</span>
+        <span>Spring MVC</span>
+        <span>Liquibase</span>
+        <span>MyBatis</span>
+        <span>Apache Camel</span>
+        <span>AngularJS</span>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>MySQL</span>
+      </div>
+    </section>
 
-<script>
-  // Smooth scrolling for nav links
-  document.querySelectorAll('nav ul li a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      document.querySelectorAll('nav ul li a').forEach(a => a.classList.remove('active'));
-      this.classList.add('active');
+    <!-- Languages -->
+    <section id="languages" data-aos="fade-up">
+      <h2 class="section-title">Languages</h2>
+      <div class="lang-container">
+        <p>Marathi</p>
+        <p>English</p>
+        <p>Hindi</p>
+      </div>
+    </section>
 
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        window.scrollTo({
-          top: target.offsetTop - 70,
-          behavior: 'smooth'
-        });
-      }
+    <!-- Contact -->
+    <section id="contact" data-aos="zoom-in">
+      <h2 class="section-title" style="color: #fff;">Contact</h2>
+      <p>📍 Pune, Maharashtra</p>
+      <p>📞 <a href="tel:+918208779171">8208779171</a></p>
+      <p>✉️ <a href="mailto:simransavaratkarm@gmail.com">simransavaratkarm@gmail.com</a></p>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/simran-savaratkar-057125247/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/SimranSavaratkar" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.hackerrank.com/simransavaratka1" target="_blank"><i class="fab fa-hackerrank"></i></a>
+        <a href="https://www.hackerearth.com/@simran330/" target="_blank"><i class="fas fa-code"></i></a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Simran Savaratkar | All Rights Reserved
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+  <!-- AOS Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000 });
+
+    // Back to Top Button
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backToTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
     });
-  });
-
-  // Back to top button
-  const backToTopBtn = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    if(window.scrollY > 300) {
-      backToTopBtn.style.display = 'block';
-    } else {
-      backToTopBtn.style.display = 'none';
-    }
-  });
-  backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  });
-
-  // Highlight nav on scroll
-  window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section');
-    const scrollPos = window.scrollY + 80; // offset for navbar
-    sections.forEach(section => {
-      if(scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
-        const id = section.getAttribute('id');
-        document.querySelectorAll('nav ul li a').forEach(a => a.classList.remove('active'));
-        const currentLink = document.querySelector(`nav ul li a[href="#${id}"]`);
-        if(currentLink) currentLink.classList.add('active');
-      }
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-  });
-</script>
 
+    // Highlight Active Nav Link
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('section');
+      const scrollPos = window.scrollY + 100;
+      sections.forEach(section => {
+        if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+          document.querySelectorAll('nav ul li a').forEach(a => a.classList.remove('active'));
+          document.querySelector(`nav ul li a[href="#${section.id}"]`).classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
