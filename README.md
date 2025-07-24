@@ -25,5 +25,5 @@ This website showcases my skills, experience, projects, education, and contact i
 ## How to View
 
 Visit the live site at:  
-https://simransavaratkar.github.io/#about
+https://simransavaratkar.github.io
 
