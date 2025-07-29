@@ -237,6 +237,277 @@
       header h2 { font-size: 1.2rem; }
       .container { margin-top: 120px; }
     }
+    /* Certifications Section */
+#certifications {
+  margin-bottom: 80px;
+}
+
+#certifications .card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+#certifications ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#certifications li {
+  background: #fef9f1;
+  border-radius: 10px;
+  padding: 18px 20px;
+  box-shadow: 0 2px 8px rgba(230, 126, 34, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+#certifications li:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(230, 126, 34, 0.3);
+}
+
+#certifications li i.fas.fa-certificate {
+  color: #f39c12;
+  font-size: 1.8rem;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+#certifications li strong {
+  font-size: 1.1rem;
+  color: #2c3e50;
+  vertical-align: middle;
+}
+
+#certifications li a {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 7px 15px;
+  background: #e67e22;
+  color: white;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  font-size: 0.9rem;
+}
+
+#certifications li a:hover {
+  background: #d35400;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  #certifications ul {
+    grid-template-columns: 1fr;
+  }
+}
+/* Timeline Education Section */
+#education {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 15px;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 35px;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.timeline {
+  border-left: 3px solid #f39c12;
+  padding-left: 25px;
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-left: 20px;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -13px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  background-color: #f39c12;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px #f39c12;
+}
+
+.details {
+  max-width: 75%;
+}
+
+.degree {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #d35400;
+  margin-bottom: 3px;
+}
+
+.institution-year {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.year {
+  color: #888;
+  font-weight: 600;
+  margin-left: 6px;
+}
+
+.percentage-badge {
+  background-color: #f39c12;
+  color: white;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 7px 15px;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Responsive: stack details and badge */
+@media (max-width: 480px) {
+  .timeline-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 15px;
+  }
+
+  .timeline-item::before {
+    left: -11px;
+    top: 0;
+    transform: translateY(0);
+  }
+
+  .details {
+    max-width: 100%;
+  }
+
+  .percentage-badge {
+    margin-top: 8px;
+    align-self: flex-start;
+  }
+}
+
+.projects-section {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  overflow-x: visible; /* keep overflow visible on section */
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #222;
+}
+
+/* Make container a horizontal scroll */
+.cards-container {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+}
+
+/* Hide scrollbar for Webkit browsers */
+.cards-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.cards-container {
+  scrollbar-width: none;
+}
+
+/* Card styles (same as before) */
+.card {
+  flex: 0 0 320px; /* fixed width cards */
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 1.8rem 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+  scroll-snap-align: start;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+  color: #007acc;
+}
+
+.job-duration {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.card-list {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+  margin: 0;
+}
+
+.card-list li {
+  margin-bottom: 0.6rem;
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Optional: Enable scroll snapping */
+.cards-container {
+  scroll-snap-type: x mandatory;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .card {
+    flex: 0 0 280px;
+    padding: 1.2rem 1.4rem;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+}
+
+
   </style>
 </head>
 <body>
@@ -304,48 +575,94 @@
     </section>
 
 <!-- Projects -->
-<section id="projects" data-aos="fade-up">
+<section id="projects" data-aos="fade-up" class="projects-section">
   <h2 class="section-title">Projects</h2>
 
-  <!-- Automated Testing Utility -->
-  <div class="card">
-    <h3>Automated Testing Utility</h3>
-    <ul>
-      <li>Developed a utility to automate test file generation.</li>
-      <li>Automated acknowledgment file generation for testing.</li>
-      <li>Created a release documentation generator.</li>
-      <li>Implemented email notifications for license expiry.</li>
-      <li>Improved testing efficiency by reducing manual effort.</li>
-    </ul>
-  </div>
+  <div class="cards-container">
+        <article class="card">
+      <h3 class="card-title">Automated Testing Utility</h3>
+      <ul class="card-list">
+        <li>Automated test and acknowledgment file generation.</li>
+        <li>Release documentation and license expiry email notifications.</li>
+        <li>Enhanced testing efficiency by reducing manual effort.</li>
+      </ul>
+    </article>
 
-  <!-- OLX Clone for Books -->
-  <div class="card">
-    <h3>OLX Clone – Used Books Marketplace</h3>
-    <p class="job-duration">Jan 2020 – May 2021</p>
-    <ul>
-      <li>Built a PHP-based web app that lets students buy/sell second-hand academic books.</li>
-      <li>Implemented login/signup, book listing, search, and contact features.</li>
-      <li>Used HTML, CSS, JavaScript, PHP, and MySQL for full-stack development.</li>
-      <li>Aimed to make affordable study materials accessible during the COVID-19 lockdown.</li>
-      <li>Designed for students to reduce time and cost in finding second-hand textbooks.</li>
-    </ul>
+    <article class="card">
+      <h3 class="card-title">OLX Clone – Used Books Marketplace</h3>
+      <p class="job-duration">Jan 2020 – May 2021</p>
+      <ul class="card-list">
+        <li>PHP web app for students to buy/sell second-hand academic books.</li>
+        <li>Login/signup, book listing, search, and contact features.</li>
+        <li>Developed using HTML, CSS, JavaScript, PHP, and MySQL.</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h3 class="card-title">Grocery Management System</h3>
+      <p class="job-duration">College Project</p>
+      <ul class="card-list">
+        <li>Django-based online grocery ordering platform.</li>
+        <li>Frontend with HTML and CSS for seamless browsing.</li>
+        <li>Connected customers to nearby shops to minimize delivery time.</li>
+      </ul>
+    </article>
+
   </div>
 </section>
 
 
-    <!-- Education -->
-    <section id="education" data-aos="fade-up">
-      <h2 class="section-title">Education</h2>
-      <div class="card">
-        <ul>
-          <li><strong>MSc (CS)</strong>, Modern College, Pune — 2023 (77.35%)</li>
-          <li><strong>BSc (CS)</strong>, Modern College, Pune — 2021 (81.63%)</li>
-          <li><strong>HSC</strong>, Modern College, Pune — 2018 (70.77%)</li>
-          <li><strong>SSC</strong>, GSM, Pune — 2016</li>
-        </ul>
+<!-- Education -->
+<section id="education" data-aos="fade-up">
+  <h2 class="section-title">Education</h2>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="details">
+        <div class="degree">MSc (CS)</div>
+        <div class="institution-year">
+          Modern College, Pune <span class="year">— 2023</span>
+        </div>
       </div>
-    </section>
+      <div class="percentage-badge">77.35%</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="details">
+        <div class="degree">BSc (CS)</div>
+        <div class="institution-year">
+          Modern College, Pune <span class="year">— 2021</span>
+        </div>
+      </div>
+      <div class="percentage-badge">81.63%</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="details">
+        <div class="degree">HSC</div>
+        <div class="institution-year">
+          Modern College, Pune <span class="year">— 2018</span>
+        </div>
+      </div>
+      <div class="percentage-badge">70.77%</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="details">
+        <div class="degree">SSC</div>
+        <div class="institution-year">
+          GSM, Pune <span class="year">— 2016</span>
+        </div>
+      </div>
+      <div class="percentage-badge">89%</div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
 
     <!-- Skills -->
     <section id="skills" data-aos="fade-up">
@@ -363,6 +680,45 @@
         <span>MySQL</span>
       </div>
     </section>
+<!-- Certifications -->
+<section id="certifications" data-aos="fade-up">
+  <h2 class="section-title">Certifications</h2>
+  <div class="card">
+    <ul>
+      <li>
+        <i class="fas fa-certificate"></i>
+        <strong>Java (Basic)</strong> – HackerRank  
+        <br>
+        <a href="https://www.hackerrank.com/certificates/iframe/bb73ff8da8c8" target="_blank" rel="noopener">View Certificate</a>
+      </li>
+      <li>
+        <i class="fas fa-certificate"></i>
+        <strong>Python (Basic)</strong> – HackerRank  
+        <br>
+        <a href="https://www.hackerrank.com/certificates/iframe/2cd257365098" target="_blank" rel="noopener">View Certificate</a>
+      </li>
+      <li>
+        <i class="fas fa-certificate"></i>
+        <strong>Problem Solving (Basic)</strong> – HackerRank  
+        <br>
+        <a href="https://www.hackerrank.com/certificates/iframe/1b492efc9675" target="_blank" rel="noopener">View Certificate</a>
+      </li>
+      <li>
+        <i class="fas fa-certificate"></i>
+        <strong>SQL (Basic)</strong> – HackerRank  
+        <br>
+        <a href="https://www.hackerrank.com/certificates/iframe/f918b37fa7ec" target="_blank" rel="noopener">View Certificate</a>
+      </li>
+      <li>
+        <i class="fas fa-certificate"></i>
+        <strong>SQL (Intermediate)</strong> – HackerRank  
+        <br>
+        <a href="https://www.hackerrank.com/certificates/iframe/0c3022caef58" target="_blank" rel="noopener">View Certificate</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
 
     <!-- Languages -->
     <section id="languages" data-aos="fade-up">
